@@ -14,6 +14,7 @@ public class IntListExercises {
             head.first += c;
             head = head.rest;
         }
+        head.first += c;
     }
 
     /**
@@ -51,7 +52,7 @@ public class IntListExercises {
      */
     public static boolean firstDigitEqualsLastDigit(int x) {
         int lastDigit = x % 10;
-        while (x > 10) {
+        while (x >= 10) {
             x = x / 10;
         }
         int firstDigit = x % 10;
@@ -77,6 +78,10 @@ public class IntListExercises {
             lst.first *= lst.first;
         }
 
+        /** In the return, it can only check one time whether
+         * the number is prime or not. Because if the currElemIsPrime
+         * is True, it will return to testSquarePrime and stop function.
+         */
         return currElemIsPrime || squarePrimes(lst.rest);
     }
 }
